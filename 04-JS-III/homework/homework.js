@@ -32,9 +32,11 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+  var newArray = [];
   for(var i =0 ; i<array.length ; i++ ){
- nuevoarray[i]-array[i]+1}
- return nuevoarray;
+ newArray[i] = array[i] + 1;
+ }
+  return newArray;
 }
 
 
@@ -42,7 +44,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "element"o al final del array
   // y devuelve el array
   // Tu código:
-  array.push(element)
+  array.push(elemento)
   return array;
 }
 
@@ -63,7 +65,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  return palabras.join('')
+  return palabras.join(' ')
 }
 
 
@@ -118,27 +120,25 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  if(arguments.length === 0){
+  
+  if (arguments.length < 1) {
     return 0
   }
-  if(arguments.length ===1){
-    return arguments[0];
+  var product = 1;
+  for( var i = 0 ; i < arguments.length ; i++){
+    product = product * arguments[i]
   }
-  var producto =1;
-  for( i=1 ; i<arguments.length ; i++){
-    producto = producto * arguments[i]
-  }
-  return producto;
+  return product;
 }
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-var  cantidaddeelementos = 0;
-for( i=1 ; i <arreglo.length ; i++ ){
-  if (arreglo [i]>18){
-    cantidaddelementos++
+var  cantidaddeelementos = [];
+for(var i = 0 ; i <arreglo.length ; i++ ){
+  if (arreglo [i] > 18){
+    cantidaddeelementos++
   }
 }
   return cantidaddeelementos;
@@ -151,7 +151,7 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: 
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  if(numeroDeDia === 1 || numeroDeDia === 2){
+  if(numeroDeDia === 7 || numeroDeDia === 1){
     return 'Es fin de semana';
   }else{
     return 'Es dia Laboral';
@@ -164,7 +164,8 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  if(n.toString()[0] === 9){
+  var num = String (n)
+  if(num[0] === '9'){
     return true;
   }  
   return false;
@@ -175,12 +176,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  for(var i=1 ; i<arreglo.length; i++){
-    if(arreglo[0]=== arreglo[i]){
+  for(var i = 1 ; i < arreglo.length ; i++){
+    if(arreglo[0] === arreglo[i]){
      
-     return false;}
+     return true;}
   }
-  return true;
+  return false;
 } 
 
 
@@ -196,7 +197,7 @@ function mesesDelAño(array) {
       array[i]==="Marzo"||
       array[i]==="Noviembre"
     ){
-      nuevoaAray.push(array[i]);
+      nuevoArray.push(array[i]);
     }
 
   }
